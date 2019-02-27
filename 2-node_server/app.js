@@ -9,13 +9,29 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.write('<html>');
     res.write('<head><title>Enter message</title></head>');
-    res.write('<body><form action="/message" method="post"><input type="text" name=""><button' +
+    res.write('<body><form action="/message" method="post"><input type="text" name="message"><button' +
         ' type="submit">send</button></form></body>');
     res.write('</html>');
     return res.end();
   }
   if (url === '/message' && method === 'POST') {
-    fs.writeFileSync('message.txt', 'DUMMY');
+    // создаем прослушивателя событий
+    // 1й - что слушаем, 2й - функция, которая должна выполняться для каждого входящего фрагмента данных.
+    const body = [];
+    req.on('data', (chunk) => {
+      console.log(chunk);
+      body.push(chunk);
+    });
+    // выключаем слушателя, как только закончился поток обрабатываемых данных
+    req.on('end', () => {
+      // отправляем данные в буфер, для обеспечения возможность работать с ними
+      // обращаемся к буферу и конкатенируем все пришедшие в body части
+      const parsetBody = Buffer.concat(body).toString();
+      // полученную строк превращаем в массив, разбивая по '='.
+      const message = parsetBody.split('=')[1];
+      // записываем message (по name) в файл
+      fs.writeFileSync('message.txt', message);
+    });
     // устанавливаем статус запроса
     res.statusCode = 302;
     // перенаправляем на адрес
