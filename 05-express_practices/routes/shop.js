@@ -8,7 +8,7 @@ const adminRouter = require('./admin');
 router.get('/', (req, res) => {
   const text = adminRouter.products;
   res.sendFile(
-    path.join(rootDir , 'views', 'shop.html'));
+    path.join(rootDir , 'views', 'shop.ejs'));
 });
 
 module.exports = router;

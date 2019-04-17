@@ -1,0 +1,25 @@
+<%-include('includes/head.ejs')%>
+<link rel="stylesheet"
+      href="/css/product.css">
+</head>
+<body>
+
+<%-include('includes/nav.ejs')%>
+
+<main class="main">
+  <form method="POST"
+        action="/admin/product"
+        class="add-product-form">
+    <label for="title"
+           class="add-product-form__label">Title</label>
+    <input type="products"
+           name="title"
+           placeholder="title..."
+           id="title"
+           class="add-product-form__input">
+    <button type="submit"
+            class="add-product-form__sub">Add product
+    </button>
+  </form>
+</main>
+<%-include('includes/end.ejs')%>

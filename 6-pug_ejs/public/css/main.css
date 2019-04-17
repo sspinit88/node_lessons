@@ -1,0 +1,112 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 10px 20px;
+  background-color: deepskyblue;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list__li {
+  display: flex;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+
+.nav-list__link {
+  color: #fff;
+  text-decoration: none;
+  transition: color ease-in-out .5s;
+}
+
+.nav-list__li.active .nav-list__link,
+.nav-list__li:hover .nav-list__link {
+  color: darkgreen;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 50px 20px;
+}
+
+.title {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.card__header,
+.card__content {
+  padding: 1rem;
+}
+
+.card__header h1,
+.card__content h1,
+.card__content h2,
+.card__content p {
+  margin: 0;
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__image img {
+  width: 100%;
+}
+
+.card__actions {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card__actions button,
+.card__actions a {
+  margin: 0 0.25rem;
+}
+
+.btn {
+  font: inherit;
+  border: 1px solid #00695c;
+  color: #00695c;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #00695c;
+  color: white;
+}
+

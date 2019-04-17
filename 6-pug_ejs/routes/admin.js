@@ -1,14 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-
-const rootDir = require('../util/path');
 
 const products = [];
 
-router.get('/add-product', (req, res) => {
-  res.sendFile(path.join(rootDir, 'views', 'add-product.ejs'));
+// /admin/add-product => GET
+router.get('/add-product', (req, res, next) => {
+  res.render('add-product', {
+    pageTitle: 'Add Product',
+    path: '/admin/add-product',
+    formsCSS: true,
+    productCSS: true,
+    activeAddProduct: true
+  });
 });
+
 
 router.post('/product', (req, res) => {
   let addedProducts = req.body.title;

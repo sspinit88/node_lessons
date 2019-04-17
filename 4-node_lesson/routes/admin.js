@@ -6,7 +6,7 @@ const rootDir = require('../util/path');
 
 router.get('/add-product', (req, res, next) => {
   // отправляем файл обратно пользователю
-  res.sendFile(path.join(rootDir, 'views', 'add-product.html'))
+  res.sendFile(path.join(rootDir, 'views', 'add-product.ejs'))
 });
 
 router.post('/add-product', (req, res, next) => {
