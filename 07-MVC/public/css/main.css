@@ -1,54 +1,57 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-
-* {
-  box-sizing: border-box;
-}
-
 body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
 }
 
-main {
-  padding: 1rem;
-  margin: auto;
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 10px 20px;
+  background-color: deepskyblue;
 }
 
-.main-header {
-  width: 100%;
-  height: 3.5rem;
-  background-color: #00695c;
-  padding: 0 1.5rem;
-}
-
-.main-header__nav {
-  height: 100%;
+.nav {
   display: flex;
   align-items: center;
 }
 
-.main-header__item-list {
-  list-style: none;
+.nav-list {
+  display: flex;
   margin: 0;
   padding: 0;
+}
+
+.nav-list__li {
   display: flex;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
 }
 
-.main-header__item {
-  margin: 0 1rem;
-  padding: 0;
-}
-
-.main-header__item a {
+.nav-list__link {
+  color: #fff;
   text-decoration: none;
-  color: white;
+  transition: color ease-in-out .5s;
 }
 
-.main-header__item a:hover,
-.main-header__item a:active,
-.main-header__item a.active {
-  color: #ffeb3b;
+.nav-list__li.active .nav-list__link,
+.nav-list__li:hover .nav-list__link {
+  color: darkgreen;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 50px 20px;
+}
+
+.title {
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 
 .grid {
@@ -83,13 +86,13 @@ main {
 }
 
 .card__actions {
-    padding: 1rem;
-    text-align: center;
+  padding: 1rem;
+  text-align: center;
 }
 
 .card__actions button,
 .card__actions a {
-    margin: 0 0.25rem;
+  margin: 0 0.25rem;
 }
 
 .btn {
@@ -106,3 +109,4 @@ main {
   background-color: #00695c;
   color: white;
 }
+
